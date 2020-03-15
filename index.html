@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Practica de Proyectos Web 1, La Salle">
+    <meta name="keywords" content="HTML,CSS,JavaScript,Projectes Web">
+    <meta name="author" content="Marc Llort Maulion">
+    <title>Practica Extraordinaria</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,700">
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="h1">Hot Songs</h1>
+        <button onclick="showSubmit()">Add a song</button>
+    </header>
+    <div id="container">
+        <h2 class="h2 center">Loading...</h2>
+    </div>
+    <div id="info">
+        <h1 class="h1 center">Extra Info</h1>
+    </div>
+    <div class="wrapper" id="wrapper">
+        <div class="container">
+            <h1>Submit Song Form</h1>
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="login">
+                    <label for="login">Login</label>
+                    <div class="line"></div>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" id="email">
+                    <label for="email">Email</label>
+                    <div class="line"></div>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="name">
+                    <label for="name">Name</label>
+                    <div class="line"></div>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="surname">
+                    <label for="surname">Surname</label>
+                    <div class="line"></div>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="track">
+                    <label for="track">Track Name - Album</label>
+                    <div class="line"></div>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="thumbnail">
+                    <label for="thumbnail">Album Cover URL</label>
+                    <div class="line"></div>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="url">
+                    <label for="url">Song URL</label>
+                    <div class="line"></div>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="genre">
+                    <label for="genre">Track Genre</label>
+                    <div class="line"></div>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="duration">
+                    <label for="duration">Duration</label>
+                    <div class="line"></div>
+                </div>
+            </form>
+            <button onclick="submitSong()">Submit Song</button>
+        </div>
+    </div>
+</body>
+
+</html>

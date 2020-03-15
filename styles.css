@@ -1,0 +1,223 @@
+body {
+    margin: 20px;
+    width: 90%;
+    min-width: 100px;
+    text-align: center;
+    padding: 8rem 3rem;
+    background-color: #151412;
+}
+
+* {
+    color: white;
+    
+    font-family: 'Poppins';
+  }
+
+h1{
+    font-family: 'Poppins';
+    color: whitesmoke;
+}
+
+h2{
+    font-family: 'Poppins';
+    color: whitesmoke;
+}
+
+h3{
+  font-family: 'Poppins';
+  color: whitesmoke;
+}
+
+.center{
+    text-align: center;
+}
+
+.albums {
+    padding: 15px;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+}
+  
+.album {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 1rem;
+    background-color: #212521;
+    color: #222;
+    border-radius: 2px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.15);
+    font-family: 'Poppins';
+}
+
+.album__name,
+.album__year {
+    padding-top: .25rem;
+}
+
+.album__info {
+    padding-top: .75rem;
+}
+
+.album__cover {
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+  .albums {
+      grid-row-gap: 30px;
+  }
+  .album {
+      grid-template-columns: 1fr;
+      align-items: initial;
+  }
+}
+
+/* Button */
+
+button {
+  background-color: #1DB954;
+  position: relative;
+  height: 50px;
+  width: 200px;
+  background-image: none;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 15px;
+  font-family: 'Poppins';
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all ease-out 0.5s;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+button .active {
+  transition-delay: 1s;
+  width: 10px;
+}
+
+button.loading {
+  border-radius: 50px;
+  width: 50px;
+  font-size: 0px;
+}
+
+.spinner {
+  display: block;
+  width: 34px;
+  height: 34px;
+  position: absolute;
+  top: 8px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  background: transparent;
+  box-sizing: border-box;
+  border-top: 4px solid white;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-radius: 100%;
+  animation-delay: 0.5s;
+  animation: spin 0.6s ease-out infinite;
+  transition: all ease 0.5s;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Form */
+
+.form-group {
+  position: relative;
+  padding-top: 15px;
+  margin-bottom: 30px;
+  padding: 15px 15px 0;
+  align-self: flex-end;
+}
+
+.form-control {
+  border: 0;
+  border-radius: 0;
+  padding: 10px 10px;
+  background-color: transparent;
+  position: relative;
+  z-index: 2;
+  font-size: 0.9rem;
+}
+
+.form-control + label {
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  margin: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  pointer-events: none;
+  left: 10px;
+  right: 10px;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.form-control:focus + label {
+  color: #1DB954;
+}
+
+.form-control:focus + label, .form-control.has-value + label {
+  font-size: 0.75rem;
+  top: 0;
+}
+
+.no-js .form-control + label {
+  font-size: 0.75rem;
+  top: 0;
+}
+
+.line {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #1DB954;
+  background-image: -o-linear-gradient(left, rgb(14, 59, 20) 0%, #1DB954 100%);
+  background: linear-gradient(to right, rgb(14, 59, 20) 0%, #1DB954 100%);
+}
+
+.line:after {
+  content: "";
+  height: 2px;
+  position: absolute;
+  display: block;
+  background: #1DB954;
+  left: 0;
+  right: 0;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+}
+
+.form-control:focus ~ .line:after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
